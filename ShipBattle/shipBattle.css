@@ -10,6 +10,112 @@
     background-repeat: no-repeat;
     border: 2px solid black;
     border-radius: 8px 8px 0 0;
-    height: 360px;
+    height: 240px;
     width: 640px;
 }
+
+.enemy {
+    position: relative;
+    height: 150px;
+}
+
+    .enemy .stats {
+        position: absolute;
+        top: 40px;
+        left: 70px;
+        width: 120px;
+    }
+
+    .enemy .ship {
+        position: absolute;
+        bottom: 0;
+        right: 140px;
+        width: 90px;
+    }
+
+.player {
+    position: relative;
+    height: 90px;
+}
+
+    .player .stats {
+        position: absolute;
+        top: 30px;
+        right: 90px;
+        width: 120px;
+    }
+
+    .player .ship {
+        position: absolute;
+        left: 90px;
+        bottom: 20px;
+        width: 120px;
+    }
+
+.box {
+    background: #c19a6b;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    color: #000;
+    height: 100px;
+    width: 640px;
+}
+
+    .box .message {
+        position: relative;
+        float: left;
+        font-size: 26px;
+        width: 45%;
+    }
+
+    .box .skills {
+        position: relative;
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+
+    .box .skills button {
+        position: relative;
+        float: left;
+        background: #c19a6b;
+        border: 2px solid #000;
+        border-radius: 2px;
+        color: #fff;
+        font-family: Arial;
+        font-size: 16px;
+        margin: 2px;
+        width: calc(50% - 8px);
+        height: calc(50% - 8px);
+    }
+
+    .box .skills button:hover {
+        background: #c6c6c6;
+    }
+
+    .box .skills button:active {
+        background: #9b7951;
+    }
+
+.stats {
+    background: #0d5676;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: white;
+}
+
+    .stats .hp-count:before {
+        content: 'HP: '
+    }
+
+    .stats .hp-count {
+        float: initial;
+        font-weight: bold;
+    }
+
+
+    .stats .name {
+        font-weight: bold;
+    }
+
