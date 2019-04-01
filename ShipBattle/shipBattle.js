@@ -28,11 +28,13 @@ function cannonball() {
             if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
             document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
             if (enemyHP == 0) {
-                document.getElementById('message').innerHTML = "Ye sunk the bilge rats!" // update message
+                document.getElementById('message').innerHTML = "Ye sunk the bilge rats!"; // update message
             }
         }
         //enemyMove();
         playerMove = 1; // updates player move to create the enemy turn.
+        console.log(playerMove)
+        enemyMove()
     }
 }
 
@@ -57,11 +59,12 @@ function heavyShot() {
             if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
             document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
             if (enemyHP == 0) {
-                document.getElementById('message').innerHTML = "Ye sunk the bilge rats!" // update message
+                document.getElementById('message').innerHTML = "Ye sunk the bilge rats!"; // update message
             }
         }
         //enemyMove();
         playerMove = 1; // updates player move to create the enemy turn.
+        enemyMove();
     }
 }
 
@@ -86,11 +89,12 @@ function explodingShot() {
             if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
             document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
             if (enemyHP == 0) {
-                document.getElementById('message').innerHTML = "Ye sunk the bilge rats!" // update message
+                document.getElementById('message').innerHTML = "Ye sunk the bilge rats!"; // update message
             }
         }
         //enemyMove();
         playerMove = 1; // updates player move to create the enemy turn.
+        enemyMove();
     }
 }
 
@@ -103,21 +107,20 @@ function piratesWager() {
             if (playerHP < 0) { playerHP = 0 } //player dies
             document.getElementById('playerHP').innerHTML = playerHP; // update hp
             if (playerHP == 0) {
-                document.getElementById('message').innerHTML = "NO DONT!" // update message
+                document.getElementById('message').innerHTML = "You lost the Gamble!"; // update message
             }
             console.log(missRate)
         }
         else {
-            document.getElementById('message').innerHTML = " You hit the Scurvy dogs! "; // attack
+            document.getElementById('message').innerHTML = " Wow! That was a mighty shot there ladie! "; // attack
             enemyHP = enemyHP - enemyHP; // no critical hit
         }
         if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
         document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
         if (enemyHP == 0) {
-            document.getElementById('message').innerHTML = "Ye sunk the bilge rats!" // update message
+            document.getElementById('message').innerHTML = "Ye sunk the bilge rats!"; // update message
         }
-        //enemyMove();
-        playerMove = 1; // updates player move to create the enemy turn.
+        
     }
 }
 
@@ -127,9 +130,10 @@ function cannonfire() {
     var missRate = Math.floor((Math.random() * 10) + 1); // miss rate
     if (missRate <= 2) {
         document.getElementById('message').innerHTML = " The enemy missed! Ya har har. Lets show them how we do it! ";
+        console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "Ye"; // Enemy attacking player
+        document.getElementById('message').innerHTML = "We be hit for considerable damage!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 1) {
             for (var x = 0; x < 2; x++) {
@@ -139,11 +143,12 @@ function cannonfire() {
         }
         else {
             playerHP = playerHP - 20; // no enemy critical hit
+            console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('enemyHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
-            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!" // Player message update, showing they have died
+            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
     }
 
@@ -153,9 +158,10 @@ function weakShot() {
     var missRate = Math.floor((Math.random() * 10) + 1); // miss rate
     if (missRate == 1) {
         document.getElementById('message').innerHTML = " The enemy missed! Ya har har. Lets show them how we do it! ";
+        console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "Ye"; // Enemy attacking player
+        document.getElementById('message').innerHTML = "Barely a dent in our ship!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 1) {
             for (var x = 0; x < 2; x++) {
@@ -165,11 +171,12 @@ function weakShot() {
         }
         else {
             playerHP = playerHP - 10; // no enemy critical hit
+            console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('enemyHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
-            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!" // Player message update, showing they have died
+            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
     }
 
@@ -179,9 +186,10 @@ function powderKeg() {
     var missRate = Math.floor((Math.random() * 10) + 1); // miss rate
     if (missRate == 1) {
         document.getElementById('message').innerHTML = " The enemy missed! Ya har har. Lets show them how we do it! ";
+        console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "Ye"; // Enemy attacking player
+        document.getElementById('message').innerHTML = "They be using powder kegs!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 6) {
             for (var x = 0; x < 2; x++) {
@@ -191,11 +199,12 @@ function powderKeg() {
         }
         else {
             playerHP = playerHP - 30; // no enemy critical hit
+            console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('enemyHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
-            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!" // Player message update, showing they have died
+            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
     }
 
@@ -205,9 +214,10 @@ function powerball() {
     var missRate = Math.floor((Math.random() * 10) + 1); // miss rate
     if (missRate <= 4) {
         document.getElementById('message').innerHTML = " The enemy missed! Ya har har. Lets show them how we do it! ";
+        console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "Ye"; // Enemy attacking player
+        document.getElementById('message').innerHTML = "Another hit like that, we be heading to Davy Jones!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 7) {
             for (var x = 0; x < 2; x++) {
@@ -217,19 +227,25 @@ function powerball() {
         }
         else {
             playerHP = playerHP - 50; // no enemy critical hit
+            console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('enemyHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
-            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!" // Player message update, showing they have died
+            document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
     }
 
 }
 
-
-    if (playerMove == 1 && enemyHP != 0) { // Is it the players move or the enemies move
-        var movePicker = Math.floor((Math.random() * 4) + 1); // Choose the enemies move at random
-        enemyAttack[move]; // call attack from array
+function enemyMove() {
+    if (playerMove === 1 && enemyHP != 0) { // Is it the players move or the enemies move
+        var movePicker = Math.floor(Math.random() * 4) ; // Choose the enemies move at random
+        console.log(movePicker);
+        console.log("Works");
+        enemyAttack[movePicker]; // call attack from array
+        console.log(enemyAttack);
         playerMove = 0; // update to players move
-   }
+}
+}
+
