@@ -243,7 +243,7 @@ function enemyMove() {
         var movePicker = Math.floor(Math.random() * 4) ; // Choose the enemies move at random
         console.log(movePicker);
         console.log("Works");
-        enemyAttack[movePicker]; // call attack from array
+        enemyAttack[movePicker].call(); // call attack from array
         console.log(enemyAttack);
         playerMove = 0; // update to players move
 }
