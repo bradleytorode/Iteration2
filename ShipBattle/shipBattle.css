@@ -21,8 +21,8 @@
 
     .enemy .stats {
         position: absolute;
-        top: 40px;
-        left: 70px;
+        top: 20px;
+        right: 120px;
         width: 120px;
     }
 
@@ -40,8 +40,8 @@
 
     .player .stats {
         position: absolute;
-        top: 30px;
-        right: 90px;
+        left: 90px;
+        bottom: 120px;
         width: 120px;
     }
 
@@ -51,6 +51,35 @@
         bottom: 20px;
         width: 120px;
     }
+
+.endTurn {
+    position: relative;
+    left: 510px;
+    bottom: 165px;
+    height: 100%;
+    width: 100px;
+}
+
+    .endTurn button {
+        position: absolute;
+        background: #c19a6b;
+        border: 2px solid black;
+        border-radius: 4px;
+        color: #fff;
+        font-family: Arial;
+        font-size: 12px;
+        line-height: 14px;
+        margin: 4px;
+        padding: 16px;
+    }
+
+        .endTurn button:hover {
+            background: #c6c6c6;
+        }
+
+        .endTurn button:active {
+            background: #9b7951;
+        }
 
 .ui {
     background: #c19a6b;
@@ -77,27 +106,28 @@
         height: 100%;
     }
 
-    .ui .skills button {
-        position: relative;
-        float: left;
-        background: #c19a6b;
-        border: 2px solid #000;
-        border-radius: 2px;
-        color: #fff;
-        font-family: Arial;
-        font-size: 16px;
-        margin: 2px;
-        width: calc(50% - 8px);
-        height: calc(50% - 8px);
-    }
+        .ui .skills button {
+            position: relative;
+            float: left;
+            background: #c19a6b;
+            border: 2px solid #000;
+            border-radius: 2px;
+            color: #fff;
+            font-family: Arial;
+            font-size: 16px;
+            margin: 2px;
+            width: calc(50% - 8px);
+            height: calc(50% - 8px);
+        }
 
-    .ui .skills button:hover {
-        background: #c6c6c6;
-    }
+            .ui .skills button:hover {
+                background: #c6c6c6;
+            }
 
-    .ui .skills button:active {
-        background: #9b7951;
-    }
+            .ui .skills button:active {
+                background: #9b7951;
+            }
+
 
 .stats {
     background: #0d5676;
@@ -119,4 +149,3 @@
     .stats .name {
         font-weight: bold;
     }
-

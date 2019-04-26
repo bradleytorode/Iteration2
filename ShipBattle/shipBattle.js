@@ -33,8 +33,6 @@ function cannonball() {
         }
         //enemyMove();
         playerMove = 1; // updates player move to create the enemy turn.
-        console.log(playerMove)
-        enemyMove()
     }
 }
 
@@ -49,7 +47,7 @@ function heavyShot() {
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 6) {
                 for (var x = 0; x < 2; x++) {
-                    enemyHP = enemyHP - 20; // critical strike succeeded
+                    enemyHP = enemyHP - 40; // critical strike succeeded
                     console.log("crit")
                 }
             }
@@ -64,7 +62,6 @@ function heavyShot() {
         }
         //enemyMove();
         playerMove = 1; // updates player move to create the enemy turn.
-        enemyMove();
     }
 }
 
@@ -79,7 +76,7 @@ function explodingShot() {
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 8) {
                 for (var x = 0; x < 2; x++) {
-                    enemyHP = enemyHP - 20; // critical strike succeeded
+                    enemyHP = enemyHP - 50; // critical strike succeeded
                     console.log("crit")
                 }
             }
@@ -94,7 +91,6 @@ function explodingShot() {
         }
         //enemyMove();
         playerMove = 1; // updates player move to create the enemy turn.
-        enemyMove();
     }
 }
 
@@ -146,7 +142,7 @@ function cannonfire() {
             console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
-        document.getElementById('enemyHP').innerHTML = playerHP; // update hp
+        document.getElementById('playerHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
             document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
@@ -174,7 +170,7 @@ function weakShot() {
             console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
-        document.getElementById('enemyHP').innerHTML = playerHP; // update hp
+        document.getElementById('playerHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
             document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
@@ -202,7 +198,7 @@ function powderKeg() {
             console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
-        document.getElementById('enemyHP').innerHTML = playerHP; // update hp
+        document.getElementById('playerHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
             document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
@@ -230,7 +226,7 @@ function powerball() {
             console.log("hit")
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
-        document.getElementById('enemyHP').innerHTML = playerHP; // update hp
+        document.getElementById('playerHP').innerHTML = playerHP; // update hp
         if (playerHP == 0) {
             document.getElementById('message').innerHTML = "We are going down! ABANDON SHIP!"; // Player message update, showing they have died
         }
