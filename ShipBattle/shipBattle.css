@@ -52,7 +52,7 @@
         width: 120px;
     }
 
-.box {
+.ui {
     background: #c19a6b;
     border: 2px solid black;
     border-top: none;
@@ -62,7 +62,7 @@
     width: 640px;
 }
 
-    .box .message {
+    .ui .message {
         position: relative;
         float: left;
         font-size: 26px;
@@ -70,14 +70,14 @@
     }
 
 
-    .box .skills {
+    .ui .skills {
         position: relative;
         float: left;
         width: 50%;
         height: 100%;
     }
 
-    .box .skills button {
+    .ui .skills button {
         position: relative;
         float: left;
         background: #c19a6b;
@@ -91,11 +91,11 @@
         height: calc(50% - 8px);
     }
 
-    .box .skills button:hover {
+    .ui .skills button:hover {
         background: #c6c6c6;
     }
 
-    .box .skills button:active {
+    .ui .skills button:active {
         background: #9b7951;
     }
 
