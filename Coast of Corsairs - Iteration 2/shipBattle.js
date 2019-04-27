@@ -1,10 +1,13 @@
 //Instantiating the variables for the Player and Enemy's Health.
-var enemyHP = 100;
-var playerHP = 100;
+var enemyHP = 500;
+var playerHP = 500;
 //Enemies Attacks
 enemyAttack = [cannonfire, weakShot, powderKeg, powerball]
 //Player Array, showing that it is the players move.
 playerMove = 0;
+//Variable for pirates gamble.
+//Variable for pirates gamble.
+var gamble = 250;
 
 //PLAYER SKILL LIST AND ABILITIES!
 function cannonball() {
@@ -17,10 +20,7 @@ function cannonball() {
             document.getElementById('message').innerHTML = " You hit the Scurvy dogs! "; // attack
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 4) {
-                for (var x = 0; x < 2; x++) {
-                    enemyHP = enemyHP - 20; // critical strike succeeded
-                    console.log("crit")
-                }
+                enemyHP = enemyHP - 40; // critical hit on enemy
             }
             else {
                 enemyHP = enemyHP - 20; // no critical hit
@@ -46,10 +46,7 @@ function heavyShot() {
             document.getElementById('message').innerHTML = " That be a great hit! "; // attack
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 6) {
-                for (var x = 0; x < 2; x++) {
-                    enemyHP = enemyHP - 40; // critical strike succeeded
-                    console.log("crit")
-                }
+                enemyHP = enemyHP - 50; // critical hit on enemy
             }
             else {
                 enemyHP = enemyHP - 30; // no critical hit
@@ -75,10 +72,7 @@ function explodingShot() {
             document.getElementById('message').innerHTML = " Ye hit there powder kegs! They be looking weak! "; // attack
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 8) {
-                for (var x = 0; x < 2; x++) {
-                    enemyHP = enemyHP - 50; // critical strike succeeded
-                    console.log("crit")
-                }
+                enemyHP = enemyHP - 90; // critical hit on enemy
             }
             else {
                 enemyHP = enemyHP - 60; // no critical hit
@@ -98,8 +92,8 @@ function piratesWager() {
     if (playerMove == 0 && playerHP != 0) {
         var missRate = Math.floor((Math.random() * 10) + 1); // miss rate
         if (missRate <= 7) {
-            document.getElementById('message').innerHTML = " Blow me down! How did ye miss! ";
-            playerHP = playerHP - playerHP;
+            document.getElementById('message').innerHTML = "Wait! That be volatile! ";
+            playerHP = playerHP - gamble;
             if (playerHP < 0) { playerHP = 0 } //player dies
             document.getElementById('playerHP').innerHTML = playerHP; // update hp
             if (playerHP == 0) {
@@ -109,14 +103,15 @@ function piratesWager() {
         }
         else {
             document.getElementById('message').innerHTML = " Wow! That was a mighty shot there ladie! "; // attack
-            enemyHP = enemyHP - enemyHP; // no critical hit
+            enemyHP = enemyHP - gamble; // no critical hit
         }
         if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
         document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
         if (enemyHP == 0) {
             document.getElementById('message').innerHTML = "Ye sunk the bilge rats!"; // update message
         }
-        
+        //enemyMove();
+        playerMove = 1; // updates player move to create the enemy turn.
     }
 }
 
@@ -131,11 +126,8 @@ function cannonfire() {
     else {
         document.getElementById('message').innerHTML = "We be hit for considerable damage!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
-        if (critical == 1) {
-            for (var x = 0; x < 2; x++) {
-                playerHP = playerHP - 20; // Enemy Critical Strike on the player
-                console.log("crit")
-            }
+        if (critical == 4) {
+            playerHP = playerHP - 40; // Enemy Critical Strike on the player
         }
         else {
             playerHP = playerHP - 20; // no enemy critical hit
@@ -159,11 +151,8 @@ function weakShot() {
     else {
         document.getElementById('message').innerHTML = "Barely a dent in our ship!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
-        if (critical == 1) {
-            for (var x = 0; x < 2; x++) {
-                playerHP = playerHP - 5; // Enemy Critical Strike on the player
-                console.log("crit")
-            }
+        if (critical == 7) {
+            playerHP = playerHP - 25; 
         }
         else {
             playerHP = playerHP - 10; // no enemy critical hit
@@ -188,10 +177,7 @@ function powderKeg() {
         document.getElementById('message').innerHTML = "They be using powder kegs!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 6) {
-            for (var x = 0; x < 2; x++) {
-                playerHP = playerHP - 10; // Enemy Critical Strike on the player
-                console.log("crit")
-            }
+            playerHP = playerHP - 60; // critical hit on enemy
         }
         else {
             playerHP = playerHP - 30; // no enemy critical hit
@@ -213,13 +199,10 @@ function powerball() {
         console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "Another hit like that, we be heading to Davy Jones!"; // Enemy attacking player
+        document.getElementById('message').innerHTML = "Another hit like that, we be heading to Davy Jones' Locker!"; // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 7) {
-            for (var x = 0; x < 2; x++) {
-                playerHP = playerHP - 20; // Enemy Critical Strike on the player
-                console.log("crit")
-            }
+            playerHP = playerHP - 80; // Enemy Critical Strike on the player
         }
         else {
             playerHP = playerHP - 50; // no enemy critical hit

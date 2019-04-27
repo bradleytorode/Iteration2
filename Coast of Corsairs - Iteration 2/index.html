@@ -12,7 +12,7 @@
     <div class="game">
         <div class="enemy">
             <div class="stats">
-                <div id="enemyHP" class="hp-count">100</div>
+                <div id="enemyHP" class="hp-count">500</div>
                 <span class="name">
                     Enemy
                 </span>
@@ -21,7 +21,7 @@
         </div>
         <div class="player">
             <div class="stats">
-                <div id="playerHP" class="hp-count">100</div>
+                <div id="playerHP" class="hp-count">500</div>
                 <span class="name">
                     Player
                 </span>
@@ -46,6 +46,10 @@
 
     <div class="endTurn">
         <button onclick="enemyMove()">End Turn</button>
+    </div>
+
+    <div class="replay">
+        <button onclick="javascript:history.go(0)">Restart Battle</button>
     </div>
 
 

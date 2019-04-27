@@ -81,6 +81,35 @@
             background: #9b7951;
         }
 
+.replay {
+    position: relative;
+    right: 3px;
+    bottom: 349px;
+    height: 10px;
+    width: 50px;
+}
+
+    .replay button {
+        position: absolute;
+        background: #c19a6b;
+        border: 1px solid black;
+        border-radius: 4px;
+        color: #fff;
+        font-family: Arial;
+        font-size: 12px;
+        line-height: 14px;
+        margin: 4px;
+        padding: 16px;
+    }
+
+        .replay button:hover {
+            background: #c6c6c6;
+        }
+
+        .replay button:active {
+            background: #9b7951;
+        }
+
 .ui {
     background: #c19a6b;
     border: 2px solid black;
