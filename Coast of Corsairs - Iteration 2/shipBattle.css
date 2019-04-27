@@ -1,0 +1,151 @@
+﻿body {
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.game {
+    position: relative;
+    background-image: url('assets/ocean.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+    border-radius: 8px 8px 0 0;
+    height: 240px;
+    width: 640px;
+}
+
+.enemy {
+    position: relative;
+    height: 150px;
+}
+
+    .enemy .stats {
+        position: absolute;
+        top: 20px;
+        right: 120px;
+        width: 120px;
+    }
+
+    .enemy .ship {
+        position: absolute;
+        bottom: 0;
+        right: 140px;
+        width: 90px;
+    }
+
+.player {
+    position: relative;
+    height: 90px;
+}
+
+    .player .stats {
+        position: absolute;
+        left: 90px;
+        bottom: 120px;
+        width: 120px;
+    }
+
+    .player .ship {
+        position: absolute;
+        left: 90px;
+        bottom: 20px;
+        width: 120px;
+    }
+
+.endTurn {
+    position: relative;
+    left: 510px;
+    bottom: 165px;
+    height: 100%;
+    width: 100px;
+}
+
+    .endTurn button {
+        position: absolute;
+        background: #c19a6b;
+        border: 2px solid black;
+        border-radius: 4px;
+        color: #fff;
+        font-family: Arial;
+        font-size: 12px;
+        line-height: 14px;
+        margin: 4px;
+        padding: 16px;
+    }
+
+        .endTurn button:hover {
+            background: #c6c6c6;
+        }
+
+        .endTurn button:active {
+            background: #9b7951;
+        }
+
+.ui {
+    background: #c19a6b;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    color: #000;
+    height: 100px;
+    width: 640px;
+}
+
+    .ui .message {
+        position: relative;
+        float: left;
+        font-size: 26px;
+        width: 45%;
+    }
+
+
+    .ui .skills {
+        position: relative;
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+
+        .ui .skills button {
+            position: relative;
+            float: left;
+            background: #c19a6b;
+            border: 2px solid #000;
+            border-radius: 2px;
+            color: #fff;
+            font-family: Arial;
+            font-size: 16px;
+            margin: 2px;
+            width: calc(50% - 8px);
+            height: calc(50% - 8px);
+        }
+
+            .ui .skills button:hover {
+                background: #c6c6c6;
+            }
+
+            .ui .skills button:active {
+                background: #9b7951;
+            }
+
+
+.stats {
+    background: #0d5676;
+    border: 2px solid black;
+    border-radius: 4px;
+    color: white;
+}
+
+    .stats .hp-count:before {
+        content: 'HP: '
+    }
+
+    .stats .hp-count {
+        float: initial;
+        font-weight: bold;
+    }
+
+
+    .stats .name {
+        font-weight: bold;
+    }

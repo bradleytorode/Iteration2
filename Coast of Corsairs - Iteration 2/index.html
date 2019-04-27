@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Coast of Corsair Battle</title>
+    <script type="text/javascript" src="./shipBattle.js"></script>
+    <link rel="stylesheet" type="text/css" href="shipBattle.css" />
+</head>
+
+<body>
+    <div class="game">
+        <div class="enemy">
+            <div class="stats">
+                <div id="enemyHP" class="hp-count">100</div>
+                <span class="name">
+                    Enemy
+                </span>
+            </div>
+            <img class="ship" src="assets/shipPlaceholder.png" alt="Enemy Sprite" />
+        </div>
+        <div class="player">
+            <div class="stats">
+                <div id="playerHP" class="hp-count">100</div>
+                <span class="name">
+                    Player
+                </span>
+            </div>
+            <img class="ship" src="assets/shipPlaceholder.png" alt="Player Sprite" />
+        </div>
+    </div>
+
+
+    <div class="ui">
+        <div id="message" class="message">
+            What be yer course of action?
+        </div>
+        <div class="skills">
+            <button onclick="cannonball()">Cannonball</button>
+            <button onclick="heavyShot()">Heavy Shot</button>
+            <button onclick="explodingShot()">Exploding Shot</button>
+            <button onclick="piratesWager()">Pirate's Wager</button>
+        </div>
+
+    </div>
+
+    <div class="endTurn">
+        <button onclick="enemyMove()">End Turn</button>
+    </div>
+
+
+</body>
+</html>
