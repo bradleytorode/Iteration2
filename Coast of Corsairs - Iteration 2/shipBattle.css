@@ -1,6 +1,6 @@
 ﻿body {
     font-family: Arial;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .game {
@@ -123,7 +123,8 @@
     .ui .message {
         position: relative;
         float: left;
-        font-size: 26px;
+        font-family: Arial;
+        font-size: 20px;
         width: 45%;
     }
 

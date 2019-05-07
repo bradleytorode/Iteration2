@@ -6,7 +6,6 @@ enemyAttack = [cannonfire, weakShot, powderKeg, powerball]
 //Player Array, showing that it is the players move.
 playerMove = 0;
 //Variable for pirates gamble.
-//Variable for pirates gamble.
 var gamble = 250;
 
 //PLAYER SKILL LIST AND ABILITIES!
@@ -17,13 +16,15 @@ function cannonball() {
             document.getElementById('message').innerHTML = " Blow me down! How did ye miss! ";
         }
         else {
-            document.getElementById('message').innerHTML = " You hit the Scurvy dogs! "; // attack
+            // attack
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 4) {
                 enemyHP = enemyHP - 40; // critical hit on enemy
+                document.getElementById('message').innerHTML = " You critically hit the Scurvy dogs! 'You hit for 40 damage'";
             }
             else {
                 enemyHP = enemyHP - 20; // no critical hit
+                document.getElementById('message').innerHTML = " You hit the Scurvy dogs! 'You hit for 20 damage'";
             }
             if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
             document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
@@ -43,13 +44,15 @@ function heavyShot() {
             document.getElementById('message').innerHTML = " Blow me down! How did ye miss! ";
         }
         else {
-            document.getElementById('message').innerHTML = " That be a great hit! "; // attack
+ // attack
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 6) {
                 enemyHP = enemyHP - 50; // critical hit on enemy
+                document.getElementById('message').innerHTML = " That be a great critical hit! 'You hit for 50 Damage' ";
             }
             else {
                 enemyHP = enemyHP - 30; // no critical hit
+                document.getElementById('message').innerHTML = " That be a great hit! 'You hit for 30 Damage' ";
             }
             if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
             document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
@@ -69,13 +72,15 @@ function explodingShot() {
             document.getElementById('message').innerHTML = " Blow me down! How did ye miss! ";
         }
         else {
-            document.getElementById('message').innerHTML = " Ye hit there powder kegs! They be looking weak! "; // attack
+ // attack
             var critical = Math.floor((Math.random() * 10) + 1); // critical
             if (critical == 8) {
                 enemyHP = enemyHP - 90; // critical hit on enemy
+                document.getElementById('message').innerHTML = " Ye critically hit their hull! They be looking weak! 'You hit for 90 Damage' ";
             }
             else {
                 enemyHP = enemyHP - 60; // no critical hit
+                document.getElementById('message').innerHTML = " Ye hit their hull! They be looking weak! 'You hit for 60 Damage' ";
             }
             if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
             document.getElementById('enemyHP').innerHTML = enemyHP; // update hp
@@ -92,7 +97,7 @@ function piratesWager() {
     if (playerMove == 0 && playerHP != 0) {
         var missRate = Math.floor((Math.random() * 10) + 1); // miss rate
         if (missRate <= 7) {
-            document.getElementById('message').innerHTML = "Wait! That be volatile! ";
+            document.getElementById('message').innerHTML = "Wait! That be volatile! You hurt yourself for 250 Damage ";
             playerHP = playerHP - gamble;
             if (playerHP < 0) { playerHP = 0 } //player dies
             document.getElementById('playerHP').innerHTML = playerHP; // update hp
@@ -102,7 +107,7 @@ function piratesWager() {
             console.log(missRate)
         }
         else {
-            document.getElementById('message').innerHTML = " Wow! That was a mighty shot there ladie! "; // attack
+            document.getElementById('message').innerHTML = " Wow! That was a mighty shot there ladie! 'You hit for 250 Damage' "; // attack
             enemyHP = enemyHP - gamble; // no critical hit
         }
         if (enemyHP < 0) { enemyHP = 0 } //Enemy dies.
@@ -123,15 +128,15 @@ function cannonfire() {
         document.getElementById('message').innerHTML = " The enemy missed! Ya har har. Lets show them how we do it! ";
         console.log("missed")
     }
-    else {
-        document.getElementById('message').innerHTML = "We be hit for considerable damage!"; // Enemy attacking player
+    else { 
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 4) {
             playerHP = playerHP - 40; // Enemy Critical Strike on the player
+            document.getElementById('message').innerHTML = "We be hit for considerable critical damage! 'you were hit for 40 Damage'";
         }
         else {
             playerHP = playerHP - 20; // no enemy critical hit
-            console.log("hit")
+            document.getElementById('message').innerHTML = "We be hit for considerable damage! 'you were hit for 20 Damage'";
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('playerHP').innerHTML = playerHP; // update hp
@@ -149,14 +154,15 @@ function weakShot() {
         console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "Barely a dent in our ship!"; // Enemy attacking player
+ // Enemy attacking player
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 7) {
-            playerHP = playerHP - 25; 
+            playerHP = playerHP - 25;
+            document.getElementById('message').innerHTML = "Barely a dent in our ship! 'you were hit for a critical of 25 Damage'";
         }
         else {
             playerHP = playerHP - 10; // no enemy critical hit
-            console.log("hit")
+            document.getElementById('message').innerHTML = "Barely a dent in our ship! 'you were hit for 10 Damage'";
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('playerHP').innerHTML = playerHP; // update hp
@@ -174,14 +180,15 @@ function powderKeg() {
         console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "They be using powder kegs!"; // Enemy attacking player
+
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 6) {
             playerHP = playerHP - 60; // critical hit on enemy
+            document.getElementById('message').innerHTML = "They be using large powder kegs! 'you were hit for 60 Damage'"; // Enemy attacking player
         }
         else {
             playerHP = playerHP - 30; // no enemy critical hit
-            console.log("hit")
+            document.getElementById('message').innerHTML = "They be using powder kegs! 'you were hit for 30 Damage'"; // Enemy attacking player
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('playerHP').innerHTML = playerHP; // update hp
@@ -199,14 +206,15 @@ function powerball() {
         console.log("missed")
     }
     else {
-        document.getElementById('message').innerHTML = "Another hit like that, we be heading to Davy Jones' Locker!"; // Enemy attacking player
+
         var critical = Math.floor((Math.random() * 10) + 1); // critical hits
         if (critical == 7) {
             playerHP = playerHP - 80; // Enemy Critical Strike on the player
+            document.getElementById('message').innerHTML = "Another critical hit like that, we be heading to Davy Jones' Locker! 'you were hit for 80 Damage'"; // Enemy attacking player
         }
         else {
             playerHP = playerHP - 50; // no enemy critical hit
-            console.log("hit")
+            document.getElementById('message').innerHTML = "Another hit like that, we be heading to Davy Jones' Locker! 'you were hit for 50 Damage'"; // Enemy attacking player
         }
         if (playerHP < 0) { playerHP = 0 } //Player Dies
         document.getElementById('playerHP').innerHTML = playerHP; // update hp
